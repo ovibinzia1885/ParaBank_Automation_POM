@@ -20,10 +20,10 @@ public class setup {
         driver.manage().window().maximize();
 
     }
-
-@AfterTest
-    public void afterTest(){
-     driver.close();
-    }
-
+//
+//@AfterTest
+//    public void afterTest(){
+//     driver.close();
+//    }
+//
 }

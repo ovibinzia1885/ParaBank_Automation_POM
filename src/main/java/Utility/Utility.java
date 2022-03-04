@@ -12,19 +12,19 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class Utility {
-    WebDriver driver;
+//    WebDriver driver;
     String fileName = "./src/test/resources/Users.json";
 
-    public Utility(WebDriver driver){
-        this.driver = driver;
-        PageFactory.initElements(driver,this);
-    }
+//    public Utility(WebDriver driver){
+////        this.driver = driver;
+////        PageFactory.initElements(driver,this);
+//    }
 
-    public void writeInJSON(String email, String password) throws IOException, ParseException {
+    public void writeInJSON(String username, String password) throws IOException, ParseException {
         JSONParser jsonParser = new JSONParser();
         Object obj = jsonParser.parse(new FileReader(fileName));
         JSONObject jsonObject = new JSONObject();
-        jsonObject.put("email",email);
+        jsonObject.put("username",username);
         jsonObject.put("password", password);
         JSONArray jsonArray = (JSONArray) obj;
         jsonArray.add(jsonObject);

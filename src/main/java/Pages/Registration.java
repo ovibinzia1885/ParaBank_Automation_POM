@@ -2,12 +2,16 @@ package Pages;
 
 import Utility.Utility;
 import com.github.javafaker.Faker;
+import org.json.simple.parser.ParseException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.io.IOException;
+import java.util.List;
 
 public class Registration {
     WebDriver driver;
@@ -36,8 +40,11 @@ public class Registration {
     WebElement Password;
     @FindBy(id="repeatedPassword")
     WebElement confirmPassword;
-    @FindBy(className = "button")
-    WebElement btnsubmitRegistration;
+//    @FindBy(className = "button")
+//    WebElement btnsubmitRegistration;
+    @FindBy(xpath = "//input[@type='submit']")
+    List<WebElement> btnSubmit;
+
     @FindBy(xpath = "//a[contains(text(),'Log Out')]")
     WebElement btnLogout;
 
@@ -47,12 +54,15 @@ public class Registration {
         PageFactory.initElements(driver,this);
     }
 
-    public void doRegistration(){
+    public void doRegistration() throws InterruptedException, IOException, ParseException {
         Faker faker = new Faker();
-        Utility utility=new Utility(driver);
+        Utility utility=new Utility();
         String phone = "0181"+(int)(Math.random() * (9999999 - 1000000 + 1) + 1000000);
+//        String phone =(int)(Math.random() * (1 - 0 + 1) + 0);
         String ssn="120"+(int)(Math.random()*10);
         String password = "P@ssword123";
+        String username=faker.name().username();
+        utility.writeInJSON(username,password);
 
         btnRegistration.click();
         customerFirstname.sendKeys(faker.name().firstName());
@@ -63,12 +73,14 @@ public class Registration {
         zipCode.sendKeys(faker.address().zipCode());
         customerPhonenumber.sendKeys(phone);
         customerSsn.sendKeys(ssn);
-        customerUsername.sendKeys(faker.name().username());
+        customerUsername.sendKeys(username);
         Password.sendKeys(password);
         confirmPassword.sendKeys(password);
-        btnsubmitRegistration.click();
-      //  wait.until(ExpectedConditions.elementToBeClickable(btnLogout));
-      //  btnLogout.click();
+        Thread.sleep(2000);
+        btnSubmit.get(1).click();
+        Thread.sleep(5000);
+//       wait.until(ExpectedConditions.elementToBeClickable(btnLogout));
+         btnLogout.click();
 
 
 

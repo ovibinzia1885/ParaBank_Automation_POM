@@ -1,10 +1,12 @@
-SetUp/setup.java
- SetUp.setup
 Pages/Login.java
  Pages.Login
-Utility/Utility.java
- Utility.Utility
 Pages/Registration.java
  Pages.Registration
 TestRunner/RegistrationTestRunner.java
  TestRunner.RegistrationTestRunner
+Utility/Utility.java
+ Utility.Utility
+SetUp/setup.java
+ SetUp.setup
+Pages/OpenNewAccount.java
+ Pages.OpenNewAccount
