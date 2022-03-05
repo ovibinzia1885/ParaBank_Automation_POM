@@ -1,0 +1,32 @@
+<suite thread-count="1" verbose="1" name="Automation For ParaBank">
+    <test name = "Registration process for 2 users">
+        <classes>
+            <class name="testrunner.RegistrationTestRunner"/>
+        </classes>
+    </test>
+    <test name = "Randomly user login">
+        <classes>
+            <class name="testrunner.LoginTestRunner"/>
+        </classes>
+    </test>
+    <test name = "Create two Saving account">
+        <classes>
+            <class name="testrunner.SavingAccountTestRunner"/>
+        </classes>
+    </test>
+    <test name = "Transction">
+        <classes>
+            <class name="testrunner.TransctionTestRunner"/>
+        </classes>
+    </test>
+    <test name = "Transfer Account">
+        <classes>
+            <class name="testrunner.TransferTestRunner"/>
+        </classes>
+    </test>
+    <test name = "Update Account">
+        <classes>
+            <class name="testrunner.UpdateAccount"/>
+        </classes>
+    </test>
+</suite>

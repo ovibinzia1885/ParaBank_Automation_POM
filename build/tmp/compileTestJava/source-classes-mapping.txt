@@ -1,0 +1,30 @@
+TestRunner/TransferTestRunner.java
+ TestRunner.TransferTestRunner
+Pages/TransferAccount.java
+ Pages.TransferAccount
+TestRunner/RegistrationTestRunner.java
+ TestRunner.RegistrationTestRunner
+Pages/Savings.java
+ Pages.Savings
+SetUp/setup.java
+ SetUp.setup
+Pages/Transaction.java
+ Pages.Transaction
+Pages/UpdatePhoneNumber.java
+ Pages.UpdatePhoneNumber
+Pages/Registration.java
+ Pages.Registration
+Pages/Login.java
+ Pages.Login
+TestRunner/TransctionTestRunner.java
+ TestRunner.TransctionTestRunner
+TestRunner/UpdateAccount.java
+ TestRunner.UpdateAccount
+Utility/Utility.java
+ Utility.Utility
+TestRunner/LoginTestRunner.java
+ TestRunner.LoginTestRunner
+TestRunner/SavingAccountTestRunner.java
+ TestRunner.SavingAccountTestRunner
+Pages/OpenNewAccount.java
+ Pages.OpenNewAccount
