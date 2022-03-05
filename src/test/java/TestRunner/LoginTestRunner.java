@@ -27,10 +27,6 @@ public class LoginTestRunner extends setup {
         String sucess=openNewAccount.CheckingOpenAccount();
         Assert.assertEquals(sucess,"Account Opened!");
 
-//        for(int i=1;i<=2;i++){
-//            openNewAccount.SavingOpenAccount();
-//
-//        }
 
     }
 
