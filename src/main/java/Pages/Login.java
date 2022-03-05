@@ -30,8 +30,7 @@ public class Login {
     WebElement transferbtn;
     @FindBy(xpath = "//a[contains(text(),'Find Transactions')]")
     WebElement findTranscetionlink;
-    @FindBy(xpath = "//a[contains(text(),'Update Contact Info')]")
-    WebElement updateContactlink;
+
     @FindBy(id="customer.phoneNumber")
     WebElement updatePhonenumber;
     @FindBy(id="criteria.onDate")
@@ -54,6 +53,7 @@ public class Login {
         Thread.sleep(1000);
         loginBtn.click();
         Thread.sleep(200);
+       // openNewaccountlink.click();
        // btnLogout.click();
 
 

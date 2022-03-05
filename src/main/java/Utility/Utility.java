@@ -5,6 +5,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
 import java.io.FileReader;
@@ -14,6 +15,7 @@ import java.io.IOException;
 public class Utility {
 //    WebDriver driver;
     String fileName = "./src/test/resources/Users.json";
+    String accountinfo = "./src/test/resources/accountinfo.json";
 
 //    public Utility(WebDriver driver){
 ////        this.driver = driver;
@@ -40,5 +42,18 @@ public class Utility {
         JSONObject jsonObject = (JSONObject) jsonArray.get(position);
         String value = (String) jsonObject.get(key);
         return value;
+    }
+
+
+    public void writeInJSONaccount(WebElement selectaccount) throws IOException, ParseException {
+        JSONParser jsonParser = new JSONParser();
+        Object obj = jsonParser.parse(new FileReader(accountinfo));
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("selectaccount",selectaccount);
+        JSONArray jsonArray = (JSONArray) obj;
+        jsonArray.add(jsonObject);
+        FileWriter file = new FileWriter(accountinfo);
+        file.write(jsonArray.toJSONString());
+        file.flush();
     }
 }

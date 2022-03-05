@@ -1,14 +1,26 @@
-Pages/OpenNewAccount.java
- Pages.OpenNewAccount
-SetUp/setup.java
- SetUp.setup
-Utility/Utility.java
- Utility.Utility
-Pages/Registration.java
- Pages.Registration
 TestRunner/RegistrationTestRunner.java
  TestRunner.RegistrationTestRunner
+SetUp/setup.java
+ SetUp.setup
+Pages/Transaction.java
+ Pages.Transaction
+Pages/Registration.java
+ Pages.Registration
+Utility/Utility.java
+ Utility.Utility
+Pages/TransferAccount.java
+ Pages.TransferAccount
+Pages/OpenNewAccount.java
+ Pages.OpenNewAccount
 Pages/Login.java
  Pages.Login
+TestRunner/TransctionTestRunner.java
+ TestRunner.TransctionTestRunner
+TestRunner/TransferTestRunner.java
+ TestRunner.TransferTestRunner
+Pages/UpdatePhoneNumber.java
+ Pages.UpdatePhoneNumber
 TestRunner/LoginTestRunner.java
  TestRunner.LoginTestRunner
+TestRunner/UpdateAccount.java
+ TestRunner.UpdateAccount
