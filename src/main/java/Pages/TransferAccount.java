@@ -18,6 +18,8 @@ public class TransferAccount {
     WebElement toAccount;
     @FindBy(xpath = "//input[@type='submit']")
     WebElement btnTransfer;
+    @FindBy(id="newAccountId")
+    WebElement newAccountid;
 
     public TransferAccount(WebDriver driver){
         this.driver = driver;
@@ -27,17 +29,22 @@ public class TransferAccount {
 
     public void TransferFund() throws InterruptedException {
         transFerbtn.click();
+
         transferAmount.sendKeys("30");
-        fromAccount.sendKeys("24999");
-        toAccount.sendKeys("25110");
+//        fromAccount.clear();
+//        fromAccount.sendKeys("24999");
+//        toAccount.clear();
+//        toAccount.sendKeys("25110");
 
 //        Select se1=new Select(fromAccount);
 //        se1.selectByValue("24222");
+//        Thread.sleep(2000);
 //        Select se2=new Select(toAccount);
 //        se2.selectByValue("24333");
+
         Thread.sleep(1000);
         btnTransfer.click();
-        Thread.sleep(1000);
+        Thread.sleep(3000);
 
 
 

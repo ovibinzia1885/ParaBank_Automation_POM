@@ -1,20 +1,17 @@
 package TestRunner;
-
 import Pages.Login;
-import Pages.OpenNewAccount;
-import Pages.Transaction;
 import Pages.UpdatePhoneNumber;
 import SetUp.setup;
 import Utility.Utility;
 import org.json.simple.parser.ParseException;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
 
 public class UpdateAccount extends setup {
     Login login;
-    WebDriver driver;
     Utility utility;
     UpdatePhoneNumber updatePhoneNumber;
     @Test
@@ -27,7 +24,8 @@ public class UpdateAccount extends setup {
         String username=utility.readFromJSON(index,"username");
         String password=utility.readFromJSON(index,"password");
         login.DoLogin(username,password);
-        updatePhoneNumber.UserPhoneNumberUpdate();
+       String sucess= updatePhoneNumber.UserPhoneNumberUpdate();
+        Assert.assertEquals(sucess,"Profile Updated");
     }
 
 }

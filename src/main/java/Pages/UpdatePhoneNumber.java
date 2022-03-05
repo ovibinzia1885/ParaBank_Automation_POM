@@ -13,6 +13,8 @@ public class UpdatePhoneNumber {
     WebElement updateNumber;
     @FindBy(xpath = "//input[@type='submit']")
     WebElement btnUpdate;
+    @FindBy(xpath ="//h1[contains(text(),'Profile Updated')]")
+    WebElement profileUpdate;
 
 
     public UpdatePhoneNumber(WebDriver driver){
@@ -20,13 +22,14 @@ public class UpdatePhoneNumber {
         PageFactory.initElements(driver,this);
 
     }
-    public void UserPhoneNumberUpdate() throws InterruptedException {
+    public String UserPhoneNumberUpdate() throws InterruptedException {
         updateContactlink.click();
         updateNumber.clear();
         updateNumber.sendKeys("01819888");
         Thread.sleep(1000);
         btnUpdate.click();
         Thread.sleep(1000);
+        return profileUpdate.getText();
 
 
 

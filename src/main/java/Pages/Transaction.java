@@ -13,10 +13,12 @@ public class Transaction {
     WebElement findTrasactionbtn;
     @FindBy(id="criteria.onDate")
     WebElement dateField;
-    @FindBy(xpath = "//input[@type='submit']")
+    @FindBy(xpath = "//button")
     List<WebElement> btntransction;
     @FindBy(xpath = "//h1[contains(text(),'Transaction Results')]")
     WebElement text;
+    @FindBy(id="criteria.amount")
+    WebElement amounttr;
 
 
     public Transaction(WebDriver driver){
@@ -24,11 +26,11 @@ public class Transaction {
         PageFactory.initElements(driver,this);
     }
 
-    public String FindTranaction() throws InterruptedException {
+    public void FindTranaction() throws InterruptedException {
         findTrasactionbtn.click();
-        dateField.sendKeys("03-03-2022");
-        Thread.sleep(1000);
-        btntransction.get(1).click();
-        return null;
+        amounttr.sendKeys("30");
+        Thread.sleep(3000);
+        btntransction.get(3).click();
+//        return text.getText();
     }
 }

@@ -18,8 +18,8 @@ public class Utility {
     String accountinfo = "./src/test/resources/accountinfo.json";
 
 //    public Utility(WebDriver driver){
-////        this.driver = driver;
-////        PageFactory.initElements(driver,this);
+//        this.driver = driver;
+//        PageFactory.initElements(driver,this);
 //    }
 
     public void writeInJSON(String username, String password) throws IOException, ParseException {
@@ -45,11 +45,11 @@ public class Utility {
     }
 
 
-    public void writeInJSONaccount(WebElement selectaccount) throws IOException, ParseException {
+    public void writeInJSONaccount(WebElement newaccount) throws IOException, ParseException {
         JSONParser jsonParser = new JSONParser();
         Object obj = jsonParser.parse(new FileReader(accountinfo));
         JSONObject jsonObject = new JSONObject();
-        jsonObject.put("selectaccount",selectaccount);
+        jsonObject.put("newaccount",newaccount);
         JSONArray jsonArray = (JSONArray) obj;
         jsonArray.add(jsonObject);
         FileWriter file = new FileWriter(accountinfo);

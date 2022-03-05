@@ -19,6 +19,7 @@ public class setup {
         driver = new ChromeDriver(ops);
         driver.manage().window().maximize();
 
+
     }
 //
 //@AfterTest

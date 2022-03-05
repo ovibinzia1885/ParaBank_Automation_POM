@@ -26,6 +26,9 @@ public class OpenNewAccount {
     WebElement fromAccount;
     @FindBy(xpath = "//input[@type='submit']")
     WebElement createNewaccountbtn;
+    @FindBy(xpath = "//h1[contains(text(),'Account Opened!')]")
+    WebElement titile;
+
 
 
     public OpenNewAccount(WebDriver driver){
@@ -34,23 +37,15 @@ public class OpenNewAccount {
 
     }
 
-    public void CheckingOpenAccount() throws IOException, ParseException {
-        Utility utility=new Utility();
-        utility.writeInJSONaccount(selectaccount);
+    public String CheckingOpenAccount() throws IOException, ParseException, InterruptedException {
         openNewaccountlink.click();
-        Select checking=new Select(selectaccount);
-        checking.selectByValue("0");
+        Thread.sleep(2000);
         createNewaccountbtn.click();
+        Thread.sleep(2000);
+        return titile.getText();
 
     }
-    public void SavingOpenAccount(){
-        openNewaccountlink.click();
-        Select checking=new Select(selectaccount);
-        checking.selectByValue("1");
-        createNewaccountbtn.click();
 
-
-    }
 
 
 
