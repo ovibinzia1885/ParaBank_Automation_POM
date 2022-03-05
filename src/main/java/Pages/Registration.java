@@ -58,7 +58,7 @@ public class Registration {
         Faker faker = new Faker();
         Utility utility=new Utility();
         String phone = "0181"+(int)(Math.random() * (9999999 - 1000000 + 1) + 1000000);
-//        String phone =(int)(Math.random() * (1 - 0 + 1) + 0);
+
         String ssn="120"+(int)(Math.random()*10);
         String password = "P@ssword123";
         String username=faker.name().username();

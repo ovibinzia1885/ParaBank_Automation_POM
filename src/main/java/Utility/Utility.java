@@ -32,4 +32,13 @@ public class Utility {
         file.write(jsonArray.toJSONString());
         file.flush();
     }
+
+    public String readFromJSON(int position, String key) throws IOException, ParseException {
+        JSONParser jsonParser = new JSONParser();
+        Object object = jsonParser.parse(new FileReader(fileName));
+        JSONArray jsonArray = (JSONArray) object;
+        JSONObject jsonObject = (JSONObject) jsonArray.get(position);
+        String value = (String) jsonObject.get(key);
+        return value;
+    }
 }
