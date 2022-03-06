@@ -17,7 +17,7 @@
 1. Need to install jdk 1.8
 2. Need good internet connectivity
 3. If sever is down script will not work in allure report
-4. if server is down you must run individully class 
+4. If server is down you must run individully class 
 ## Run the automation script:
 1. Open cmd to the project folder
 2. Type this command:
